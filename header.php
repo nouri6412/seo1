@@ -16,16 +16,16 @@
 
 	?>
 	<header id="header" class="">
-		<!-- <div class="header-bg">
-<img src="https://saatchico.com/assets/images/back.jpg">
-</div> -->
+
 		<div class="">
 			<div class="top-wrapper">
 				<ul class="inner_wrapper maxWidth">
 					<?php
 					foreach ($header['top-menu'] as $navItem) {
 					?>
-						<a href="<?php echo get_permalink($navItem->ID); ?>"><?php echo $navItem->post_title; ?></a>
+						<li>
+							<a href="<?php echo get_permalink($navItem->ID); ?>"><?php echo $navItem->post_title; ?></a>
+						</li>
 					<?php
 					}
 					?>
@@ -140,99 +140,95 @@
 					<div class="bottom_nav-wrapp clrfx menu-wrapper row">
 						<div class="bottom-menu w-100">
 							<ul class="menu inner_wrapper clrfx row maxWidth">
-								<li>
-									<?php
-									foreach ($header["menu"] as $menu) {
-									?>
-								<li>
-									<a href="<?php echo  $menu["link"]  ?>"><?php echo $menu["title"] ?></a>
-									<div class="row menu-box p-4 clrfx">
-										<div class="menubox-inner">
-											<div class=" submenu-wrapper">
-												<div class="top-submenu">
-													<p><?php echo $menu["title"] ?>
-														<a class="has-icon arrow-left" href="<?php echo  $menu["link"]  ?>">
-															مشاهده همه ی محصولات
-														</a>
-													</p>
-													<ul>
-														<li>
-															<a href="<?php echo  $menu["link"]  ?>"><?php echo 'انواع' . ' ' . $menu["title"] ?> </a>
-															<ul>
-																<?php
-																foreach ($menu['items'] as $item) {
-																?>
-																	<li>
-																		<a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
-																	</li>
-																<?php
-																}
-																?>
-															</ul>
-														</li>
-														<li>
-															<a href="/womens-pendant-set">رنج قیمت </a>
-															<ul>
-																<?php
-																foreach ($menu['items-price'] as $item) {
-																?>
-																	<li>
-																		<a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
-																	</li>
-																<?php
-																}
-																?>
-															</ul>
-														</li>
-													</ul>
+								<?php
+								foreach ($header["menu"] as $menu) {
+								?>
+									<li>
+										<a href="<?php echo  $menu["link"]  ?>"><?php echo $menu["title"] ?></a>
+										<div class="row menu-box p-4 clrfx">
+											<div class="menubox-inner">
+												<div class=" submenu-wrapper">
+													<div class="top-submenu">
+														<p><?php echo $menu["title"] ?>
+															<a class="has-icon arrow-left" href="<?php echo  $menu["link"]  ?>">
+																مشاهده همه ی محصولات
+															</a>
+														</p>
+														<ul>
+															<li>
+																<a href="<?php echo  $menu["link"]  ?>"><?php echo 'انواع' . ' ' . $menu["title"] ?> </a>
+																<ul>
+																	<?php
+																	foreach ($menu['items'] as $item) {
+																	?>
+																		<li>
+																			<a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
+																		</li>
+																	<?php
+																	}
+																	?>
+																</ul>
+															</li>
+															<li>
+																<a href="/womens-pendant-set">رنج قیمت </a>
+																<ul>
+																	<?php
+																	foreach ($menu['items-price'] as $item) {
+																	?>
+																		<li>
+																			<a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
+																		</li>
+																	<?php
+																	}
+																	?>
+																</ul>
+															</li>
+														</ul>
+													</div>
 												</div>
-											</div>
-											<div class="menuImageContainer">
-												<img src="<?php $menu["img1"]['img'] ?>" alt="<?php $menu["img1"]['title'] ?>" data-href="<?php $menu["img1"]['link'] ?>" class="menu-image">
+												<div class="menuImageContainer">
+													<img src="<?php $menu["img1"]['img'] ?>" alt="<?php $menu["img1"]['title'] ?>" data-href="<?php $menu["img1"]['link'] ?>" class="menu-image">
 
-												<div>
-													<img src="<?php $menu["img2"]['img'] ?>" alt="<?php $menu["img2"]['title'] ?>" data-href="<?php $menu["img2"]['link'] ?>" class="menu-image">
-												</div>
-												<div>
-												</div>
+													<div>
+														<img src="<?php $menu["img2"]['img'] ?>" alt="<?php $menu["img2"]['title'] ?>" data-href="<?php $menu["img2"]['link'] ?>" class="menu-image">
+													</div>
+													<div>
+													</div>
 
+												</div>
 											</div>
 										</div>
-									</div>
+									</li>
+								<?php } ?>
+
+								<?php
+								foreach ($header['top-menu'] as $navItem) {
+								?>
+									<li class="r-show">
+										<a href="<?php echo get_permalink($navItem->ID); ?>"><?php echo $navItem->post_title; ?></a>
+									</li>
+								<?php
+								}
+								?>
+								<li class="r-show">
+									<a href="<?php echo  $header["link-cal-price"] ?>" target="_blank">
+										<i class="fa fa-line-chart text-danger"></i>
+										محاسبه قیمت
+									</a>
 								</li>
-							<?php } ?>
-
-							<li class="r-show">
-								<a href="https://saatchico.com/calculator">
-									محاسبه قیمت
-									<i class="fa fa-line-chart text-danger"></i>
-								</a>
-							</li>
-							<li class="r-show text-primary">
-								<a href="https://saatchico.com/landing/vip">
-									خرید عمده
-									<i class="fa fa-bell"></i>
-								</a>
-							</li>
-							<li class="r-show"><a href="/pages/about-us">درباره ما</a></li>
-							<li class="r-show"><a href="/payment/offline">پرداخت فاکتور</a></li>
-							<li class="r-show"><a href="/contact">تماس با ما</a></li>
-							<li class="r-show"><a href="/gallery">گالری تصاویر</a></li>
-							<li class="r-show"><a href="/report">ثبت شکایات</a></li>
-							<li class="r-show"><a href="/pages/purchase-guide">راهنمای خرید</a></li>
-							<li class="r-show"><a href="/pages/Size-Determination-Guide">راهنمای تعیین سایز</a>
-							</li>
-
-							<li class="r-show phone">
-								<a href="tel:02136349092">دفتر بازار:
-									<span>02136349092</span>
-								</a>
-							</li>
-							<li class="r-show phone">
-								<a href="tel:09120202239">پشتیبانی :
-									<span>09120202239</span>
-								</a>
-							</li>
+								<li class="r-show">
+									<a href="<?php echo  $header["link-buy-price"] ?>" target="_blank">
+										<i class="fa fa-bell text-info"></i>
+										خرید عمده
+									</a>
+								</li>
+								<li class="r-show">
+									<a href="tel:+<?php echo  $header["support-tel"] ?>">
+										<i class="fa fa-phone headphone"></i>
+										تماس با پشتیبانی
+										<?php echo  $header["support-tel"] ?>
+									</a>
+								</li>
 							</ul>
 
 						</div>
@@ -338,682 +334,92 @@
 	</header><!-- /header -->
 	<div class="menu-content">
 		<ul class="menu clrfx headerPageMenu">
-			<li>
-				<a href="/womens-pendant-set">ست و نیم ست</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>ست و نیم ست
-									<a class="has-icon arrow-left" href="/womens-pendant-set">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/womens-pendant-set">انواع نیم ست </a>
-										<ul>
-											<li>
-												<a href="/gemstone-pendant-set">نیم ست با سنگ و نگین </a>
-											</li>
-											<li>
-												<a href="/pendant-set">نیم ست بدون نگین </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;weight[min]=0.03&amp;weight[max]=6.32">نیم
-													ست ظریف</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;tag[]=67">نیم
-													ست با مروارید</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;weight[min]=0.03&amp;weight[max]=35.05&amp;price[min]=11000&amp;price[max]=15984000&amp;tag[]=62">نیم
-													ست مولتی کالر </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;exist=exist" class="has-icon arrow-left">نیم ست های تحویل فوری </a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="/womens-pendant-set">رنج قیمت </a>
-										<ul>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;price[min]=2681000&amp;price[max]=4000000&amp;order=min">تا
-													4 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;price[min]=4000000&amp;price[max]=6000000">4
-													تا6 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;price[min]=6000000&amp;price[max]=8000000">6
-													تا 8 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-pendant-set?v&amp;price[min]=8000000&amp;price[max]=20074000">بالای8
-													میلیون تومان</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
+			<?php
+			foreach ($header["menu"] as $menu) {
+			?>
+				<li>
+					<a href="<?php echo  $menu["link"]  ?>"><?php echo $menu["title"] ?></a>
+					<div class="row menu-box p-4 clrfx">
+						<div class="menubox-inner">
+							<div class=" submenu-wrapper">
+								<div class="top-submenu">
+									<p><?php echo $menu["title"] ?>
+										<a class="has-icon arrow-left" href="<?php echo  $menu["link"]  ?>">
+											مشاهده همه ی محصولات
+										</a>
+									</p>
+									<ul>
+										<li>
+											<a href="<?php echo  $menu["link"]  ?>"><?php echo 'انواع' . ' ' . $menu["title"] ?> </a>
+											<ul>
+												<?php
+												foreach ($menu['items'] as $item) {
+												?>
+													<li>
+														<a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
+													</li>
+												<?php
+												}
+												?>
+											</ul>
+										</li>
+										<li>
+											<a href="/womens-pendant-set">رنج قیمت </a>
+											<ul>
+												<?php
+												foreach ($menu['items-price'] as $item) {
+												?>
+													<li>
+														<a href="<?php echo $item['link'] ?>"><?php echo $item['title'] ?></a>
+													</li>
+												<?php
+												}
+												?>
+											</ul>
+										</li>
+									</ul>
+								</div>
 							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/20/17td9qUM/original.jpg" alt="نیم ست های سبک ساعتچی" data-href="https://saatchico.com/Womens-Pendant-Set?v&amp;weight[min]=0.03&amp;weight[max]=6.32" class="menu-image">
+							<div class="menuImageContainer">
+								<img src="<?php $menu["img1"]['img'] ?>" alt="<?php $menu["img1"]['title'] ?>" data-href="<?php $menu["img1"]['link'] ?>" class="menu-image">
 
-							<div>
-								<img src="https://saatchico.com/uploads/menus/20/63mEOt8U/original.jpg" alt="نیم ست برگ زیتون" data-href="https://saatchico.com/Womens-Pendant-Set/LS617" class="menu-image">
-							</div>
-							<div>
-							</div>
+								<div>
+									<img src="<?php $menu["img2"]['img'] ?>" alt="<?php $menu["img2"]['title'] ?>" data-href="<?php $menu["img2"]['link'] ?>" class="menu-image">
+								</div>
+								<div>
+								</div>
 
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/womens-necklace">گردنبند طلا زنانه</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>گردنبند طلا زنانه
-									<a class="has-icon arrow-left" href="/womens-necklace">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/womens-necklace">انواع گردنبند طلا</a>
-										<ul>
-											<li>
-												<a href="/long-necklace">گردنبند رولباسی طلا</a>
-											</li>
-											<li>
-												<a href="/choker">گردنبند طلا چوکر (تو گردنی)</a>
-											</li>
-											<li>
-												<a href="/pendant">آویز گردنبند طلا (بدون زنجیر) </a>
-											</li>
-											<li>
-												<a href="/necklace">گردنبند با زنجیر </a>
-											</li>
-											<li>
-												<a href="/chain" class="has-icon arrow-left">زنجیر تک طلا </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;price[min]=10&amp;price[max]=10000000&amp;exist=exist" class="has-icon arrow-left">گردنبند های تحویل فوری </a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a>رنج قیمت</a>
-										<ul>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;weight[min]=0&amp;weight[max]=50&amp;price[min]=10&amp;price[max]=500000">تا
-													500 هزار تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;weight[min]=2&amp;weight[max]=50&amp;price[min]=500000&amp;price[max]=1000000">500هزارتا
-													1میلیون</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;weight[min]=0&amp;weight[max]=50&amp;price[min]=983010&amp;price[max]=2009010">1
-													تا 2 میلیون</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;weight[min]=0&amp;weight[max]=50&amp;price[min]=2009010&amp;price[max]=3077010">2
-													تا 3 میلیون</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;weight[min]=0&amp;weight[max]=50&amp;price[min]=2991010&amp;price[max]=10000000">بالای
-													3 میلیون </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-necklace?v&amp;weight[min]=0.03&amp;weight[max]=35.05&amp;price[min]=11000&amp;price[max]=15984000&amp;exist=exist" class="has-icon arrow-left">گردنبند های مناسب هدیه </a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/121/adaSKKno/original.jpg" alt="گردنبند با قفل مارلا آرون" data-href="https://saatchico.com/Necklace/CN463" class="menu-image">
-
-							<div>
-								<img src="https://saatchico.com/uploads/menus/121/cKIGIHF9/original.jpg" alt="گردنبند امگا" data-href="https://saatchico.com/Necklace/CN467" class="menu-image">
-							</div>
-							<div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/womens-earings">گوشواره</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>گوشواره
-									<a class="has-icon arrow-left" href="/womens-earings">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/womens-earings">انواع گوشواره </a>
-										<ul>
-											<li>
-												<a href="/studs-earrings">گوشواره میخی </a>
-											</li>
-											<li>
-												<a href="/hanging-earrings">گوشواره آویزی </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;tag[]=67">گوشواره
-													با مروارید </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;tag[]=62">گوشواره
-													مولتی کالر </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings/eo100" class="has-icon arrow-left">پشت گوشواره طلا</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;exist=exist" class="has-icon arrow-left">گوشواره های تحویل فوری </a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a>رنج قیمت</a>
-										<ul>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;price[min]=11000&amp;price[max]=1000000&amp;order=min">تا
-													1 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;price[min]=1000000&amp;price[max]=2000000">1
-													تا 2 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;price[min]=2000000&amp;price[max]=3000000">2
-													تا 3 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-earings?v&amp;price[min]=3000000&amp;price[max]=19771000">بالای
-													3 میلیون تومان</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/19/I6Mo8mMv/original.jpg" alt="گوشواره گل" data-href="https://saatchico.com/studs-earrings/CE401" class="menu-image">
-
-							<div>
-								<img src="https://saatchico.com/uploads/menus/19/d2WE9PAy/original.jpg" alt="گوشواره طلا با میناکاری" data-href="https://saatchico.com/studs-earrings/LE680" class="menu-image">
-							</div>
-							<div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/womens-ring">انگشتر</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>انگشتر
-									<a class="has-icon arrow-left" href="/womens-ring">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/womens-ring">انواع انگشتر</a>
-										<ul>
-											<li>
-												<a href="/non-jeweled-ring">انگشتر بدون نگین </a>
-											</li>
-											<li>
-												<a href="/jeweled-ring">انگشتر نگین دار </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;tag[]=67">انگشتر با
-													مروارید </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;tag[]=62">انگشتر
-													مولتی کالر </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;exist=exist" class="has-icon arrow-left">انگشترهای تحویل فوری</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a>رنج قیمت</a>
-										<ul>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;price[min]=11000&amp;price[max]=1000000">تا
-													1 میلیون تومان </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;price[min]=1000000&amp;price[max]=2000000">1
-													تا 2 میلیون </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;price[min]=2000000&amp;price[max]=3000000">2
-													تا 3 میلیون </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;price[min]=3000000&amp;price[max]=5000000&amp;order=max">3
-													تا 5 میلیون </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-ring?v&amp;price[min]=5000000&amp;price[max]=17337000&amp;order=max">بالای
-													5 میلیون</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/17/a8ABO21a/original.jpg" alt="انگشتر با نگین" data-href="https://saatchico.com/Jeweled-Ring/CR506" class="menu-image">
-
-							<div>
-								<img src="https://saatchico.com/uploads/menus/17/syyzVTPi/original.jpg" alt="انگشتر جدید" data-href="https://saatchico.com/Womens-Ring?v&amp;order=desc" class="menu-image">
-							</div>
-							<div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/womens-bracelet">دستبند</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>دستبند
-									<a class="has-icon arrow-left" href="/womens-bracelet">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/womens-bracelet">انواع دستبند</a>
-										<ul>
-											<li>
-												<a href="/bracelet">دستبند با زنجیر </a>
-											</li>
-											<li>
-												<a href="/stone-bracelet">دستبند با سنگ</a>
-											</li>
-											<li>
-												<a href="/woven-bracelet">دستبند با بافت</a>
-											</li>
-											<li>
-												<a href="/leather-bracelet">دستبند با چرم</a>
-											</li>
-											<li>
-												<a href="/bangle-bracelet">دستبند النگویی </a>
-											</li>
-											<li>
-												<a href="/arabian-bracelet">تمیمه </a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a>رنج قیمت</a>
-										<ul>
-											<li>
-												<a href="https://saatchico.com/womens-bracelet?v&amp;price[min]=11000&amp;price[max]=500000">تا
-													500 هزار تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-bracelet?v&amp;price[min]=500000&amp;price[max]=1000000">500
-													تا 1 میلیون</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-bracelet?v&amp;price[min]=1000000&amp;price[max]=2000000">1
-													تا 2 میلیون </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-bracelet?v&amp;price[min]=2000000&amp;price[max]=15963000">بالای
-													2 میلیون </a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-bracelet?v&amp;exist=exist" class="has-icon arrow-left">دستبندهای تحویل فوری</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/59/e3qQC1zF/original.jpg" alt="دستبند رولکس" data-href="https://saatchico.com/Bracelet/CB459" class="menu-image">
-
-							<div>
-								<img src="https://saatchico.com/uploads/menus/59/21f2Dalh/original.jpg" alt="دستبند شوپارد" data-href="https://saatchico.com/Gold-Store?query=%D8%B4%D9%88%D9%BE%D8%A7%D8%B1%D8%AF" class="menu-image">
-							</div>
-							<div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/ankle-jewelry">پابند</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>پابند
-									<a class="has-icon arrow-left" href="/ankle-jewelry">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/other-gold-products-ankle-jewelry">انواع پابند </a>
-										<ul>
-											<li>
-												<a href="/jeweled-ankle-jewlery">پابند با سنگ و نگین </a>
-											</li>
-											<li>
-												<a href="/non-jeweled-ankle-jewlery">پابند بدون نگین </a>
-											</li>
-											<li>
-												<a href="/ankle-jewelry?v&amp;exist=exist" class="has-icon arrow-left">پابندهای تحویل فوری</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/123/kVpdOrtA/original.jpg" alt="پابند طلا" data-href="" class="menu-image">
-
-							<div>
-								<img src="https://saatchico.com/uploads/menus/123/XIwwh5Cj/original.jpg" alt="پابند فیگارو" data-href="https://saatchico.com/Non-Jeweled-Ankle-Jewlery/CA413" class="menu-image">
-							</div>
-							<div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/womens-watch-pendant">آویز ساعت</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>آویز ساعت
-									<a class="has-icon arrow-left" href="/womens-watch-pendant">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/womens-watch-pendant">انواع آویز ساعت</a>
-										<ul>
-											<li>
-												<a href="/jeweled-watch-pendant">آویز ساعت نگین دار</a>
-											</li>
-											<li>
-												<a href="/nonjeweled-watch-pendant">آویز ساعت بدون نگین</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-watch-pendant?v&amp;exist=exist" class="has-icon arrow-left">آویز ساعت های تحویل فوری </a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a href="/womens-watch-pendant">رنج قیمت </a>
-										<ul>
-											<li>
-												<a href="https://saatchico.com/womens-watch-pendant?v&amp;price[min]=11000&amp;price[max]=350000">تا
-													350 هزار تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-watch-pendant?v&amp;price[min]=350000&amp;price[max]=500000">350
-													تا 500 هزار تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-watch-pendant?v&amp;price[min]=500000&amp;price[max]=650000">500
-													تا 650 هزار تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/womens-watch-pendant?v&amp;price[min]=650000&amp;price[max]=19687000">بالای
-													600 هزار تومان</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/131/lRDu6IHp/original.jpg" alt="watch pendant" data-href="https://saatchico.com/Womens-Watch-Pendant" class="menu-image">
-
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/childrens-gold">طلای کودک</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>طلای کودک
-									<a class="has-icon arrow-left" href="/childrens-gold">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/childrens-gold">انواع زیور آلات کودک</a>
-										<ul>
-											<li>
-												<a href="/childrens-necklace">گردنبند طلا دخترانه</a>
-											</li>
-											<li>
-												<a href="/childrens-bracelet">دستبند </a>
-											</li>
-											<li>
-												<a href="/kids-brooch">سنجاق سینه</a>
-											</li>
-											<li>
-												<a href="/earring">گوشواره کودک </a>
-											</li>
-											<li>
-												<a href="/children&#039;s-gold-jewelry-sets">نیم ست کودک</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/childrens-gold?v&amp;exist=exist" class="has-icon arrow-left">موجودی با تحویل فوری</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a>رنج قیمت</a>
-										<ul>
-											<li>
-												<a href="/childrens-gold?v&amp;price[min]=413000&amp;price[max]=750000">تا
-													750 هزار تومان</a>
-											</li>
-											<li>
-												<a href="/childrens-gold?v&amp;price[min]=413000&amp;price[max]=1500000">تا
-													1/5 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="/childrens-gold?v&amp;price[min]=1500000&amp;price[max]=2000000">1/5
-													تا2 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/childrens-gold?v&amp;price[min]=2000000&amp;price[max]=3000000">2
-													تا 3 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="https://saatchico.com/childrens-gold?v&amp;price[min]=3000000&amp;price[max]=6185000">بالای
-													3 میلیون تومان</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/48/FCeLyWNh/original.jpg" alt="طلای کودک" data-href="https://saatchico.com/Childrens-Gold" class="menu-image">
-
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="/men-colection">گالری آقایان</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>گالری آقایان
-									<a class="has-icon arrow-left" href="/men-colection">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-									<li>
-										<a href="/men-colection">انواع محصولات</a>
-										<ul>
-											<li>
-												<a href="/men-leather-bracelet">دستبند چرم </a>
-											</li>
-											<li>
-												<a href="/gemstone-bracelet">دستبند سنگ</a>
-											</li>
-											<li>
-												<a href="/men-necklace">گردنبند- زنجیر </a>
-											</li>
-											<li>
-												<a href="/ring">انگشتر </a>
-											</li>
-											<li>
-												<a href="/men-leather-bracelet" class="has-icon arrow-left">دستبندهای چرم تحویل فوری</a>
-											</li>
-										</ul>
-									</li>
-									<li>
-										<a>رنج قیمت</a>
-										<ul>
-											<li>
-												<a href="/men-leather-bracelet?v&amp;price[min]=591000&amp;price[max]=2000000">تا
-													2 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="/men-leather-bracelet?v&amp;price[min]=2000000&amp;price[max]=4000000">2
-													تا 4 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="/men-leather-bracelet">4 تا 6 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="/men-leather-bracelet">6 تا 8 میلیون تومان</a>
-											</li>
-											<li>
-												<a href="/men-leather-bracelet">بالای 8 میلیون تومان</a>
-											</li>
-										</ul>
-									</li>
-								</ul>
-							</div>
-						</div>
-						<div class="menuImageContainer">
-							<img src="https://saatchico.com/uploads/menus/239/C9jseTqI/original.jpg" alt="دستبند کارتیه با چرم" data-href="https://saatchico.com/Men-Leather-Bracelet/MB130" class="menu-image">
-
-							<div>
-								<img src="https://saatchico.com/uploads/menus/239/jH7ZtpvW/original.jpg" alt="دستبند امگا با چرم" data-href="https://saatchico.com/Men-Leather-Bracelet/MB143" class="menu-image">
-								<img src="https://saatchico.com/uploads/menus/239/afHZaMlv/original.jpg" alt="دستبند چرم و طلا" data-href="" class="menu-image">
-							</div>
-							<div>
-							</div>
-
-						</div>
-					</div>
-				</div>
-			</li>
-			<li>
-				<a href="https://saatchico.com/brand">برند ها</a>
-				<div class="row menu-box p-4 clrfx">
-					<div class="menubox-inner">
-						<div class=" submenu-wrapper">
-							<div class="top-submenu">
-								<p>برند ها
-									<a class="has-icon arrow-left" href="https://saatchico.com/brand">
-										مشاهده همه ی محصولات
-									</a>
-								</p>
-								<ul>
-								</ul>
 							</div>
 						</div>
 					</div>
-				</div>
-			</li>
-
+				</li>
+			<?php } ?>
+			<?php
+			foreach ($header['top-menu'] as $navItem) {
+			?>
+				<li class="r-show">
+					<a href="<?php echo get_permalink($navItem->ID); ?>"><?php echo $navItem->post_title; ?></a>
+				</li>
+			<?php
+			}
+			?>
 			<li class="r-show">
-				<a href="https://saatchico.com/calculator">
-					محاسبه قیمت
+				<a href="<?php echo  $header["link-cal-price"] ?>" target="_blank">
 					<i class="fa fa-line-chart text-danger"></i>
+					محاسبه قیمت
 				</a>
 			</li>
-			<li class="r-show text-primary">
-				<a href="https://saatchico.com/landing/vip">
+			<li class="r-show">
+				<a href="<?php echo  $header["link-buy-price"] ?>" target="_blank">
+					<i class="fa fa-bell text-info"></i>
 					خرید عمده
-					<i class="fa fa-bell"></i>
 				</a>
 			</li>
-			<li class="r-show"><a href="/pages/about-us">درباره ما</a></li>
-			<li class="r-show"><a href="/payment/offline">پرداخت فاکتور</a></li>
-			<li class="r-show"><a href="/contact">تماس با ما</a></li>
-			<li class="r-show"><a href="/gallery">گالری تصاویر</a></li>
-			<li class="r-show"><a href="/report">ثبت شکایات</a></li>
-			<li class="r-show"><a href="/pages/purchase-guide">راهنمای خرید</a></li>
-			<li class="r-show"><a href="/pages/Size-Determination-Guide">راهنمای تعیین سایز</a></li>
-
-
-
-
-
-
-
-
-
-
-			<li class="r-show phone">
-				<a href="tel:02136349092">دفتر بازار:
-					<span>02136349092</span>
-				</a>
-			</li>
-			<li class="r-show phone">
-				<a href="tel:09120202239">پشتیبانی :
-					<span>09120202239</span>
+			<li class="r-show">
+				<a href="tel:+<?php echo  $header["support-tel"] ?>">
+					<i class="fa fa-phone headphone"></i>
+					تماس با پشتیبانی
+					<?php echo  $header["support-tel"] ?>
 				</a>
 			</li>
 		</ul>
