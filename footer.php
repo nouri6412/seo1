@@ -2,6 +2,7 @@
 $footer = get_field('footer', 'option');
 $header = get_field('header', 'option');
 ?>
+</div>
 <div class="modal" id="price-modal">
 	<div class="modal-wrapper">
 		<div class="modal-content">
