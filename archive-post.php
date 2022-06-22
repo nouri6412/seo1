@@ -6,7 +6,7 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
  * @package WordPress
- * @subpackage Kaktos
+ * @subpackage Seo1
  *  * Template Name: آخرین مطالب
  */
 $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;

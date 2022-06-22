@@ -1,6 +1,6 @@
 <?php
 
-class Kaktos_Company
+class Seo1_Company
 {
     function save_profile()
     {
@@ -66,10 +66,10 @@ class Kaktos_Company
     }
 }
 
-$Kaktos_Company = new Kaktos_Company;
-add_action('wp_ajax_mbm_profile_company_profile', array($Kaktos_Company, 'save_profile'));
-add_action('wp_ajax_nopriv_mbm_profile_company_profile', array($Kaktos_Company, 'save_profile'));
+$Seo1_Company = new Seo1_Company;
+add_action('wp_ajax_mbm_profile_company_profile', array($Seo1_Company, 'save_profile'));
+add_action('wp_ajax_nopriv_mbm_profile_company_profile', array($Seo1_Company, 'save_profile'));
 
-add_action('wp_ajax_mbm_profile_company_profile_change_pass', array($Kaktos_Company, 'change_pass'));
-add_action('wp_ajax_nopriv_mbm_profile_company_profile_change_pass', array($Kaktos_Company, 'change_pass'));
+add_action('wp_ajax_mbm_profile_company_profile_change_pass', array($Seo1_Company, 'change_pass'));
+add_action('wp_ajax_nopriv_mbm_profile_company_profile_change_pass', array($Seo1_Company, 'change_pass'));
 

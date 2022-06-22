@@ -1,12 +1,12 @@
 <?php
 //************************* dynamic title *****************************
-function kaktos_theme_support()
+function seo1_theme_support()
 {
     add_theme_support('title-tag');
     add_theme_support('post-thumbnails');
     add_theme_support('category-thumbnails');
 }
-add_action('after_setup_theme', 'kaktos_theme_support');
+add_action('after_setup_theme', 'seo1_theme_support');
 
 add_filter('show_admin_bar', '__return_false');
 
@@ -81,8 +81,8 @@ foreach (glob(get_template_directory() . "/inc/save-post/*.php") as $filename) {
 if (function_exists('acf_add_options_page')) {
 
     acf_add_options_page(array(
-        'page_title'     => 'تنظیمات  قالب کاکتوس',
-        'menu_title'    => 'تنظیمات  قالب کاکتوس',
+        'page_title'     => 'تنظیمات  قالب سئوکار 1',
+        'menu_title'    => 'تنظیمات  قالب سئوکار 1',
         'menu_slug'     => 'theme-general-settings',
         'capability'    => 'edit_posts',
         'redirect'        => false
@@ -106,12 +106,12 @@ if (function_exists('acf_add_options_page')) {
 
 
 /// ajax
-function kaktos_theme_scripts()
+function seo1_theme_scripts()
 {
     global $wp_query;
 
     wp_enqueue_script(
-        'kaktos_ajax_script',
+        'seo1_ajax_script',
         get_template_directory_uri() . '/assets/js/ajax.js',
         array('jquery'),
         1,
@@ -119,7 +119,7 @@ function kaktos_theme_scripts()
     );
 
     wp_enqueue_script(
-        'kaktos_ajax_file_script',
+        'seo1_ajax_file_script',
         get_template_directory_uri() . '/assets/js/file.js',
         array('jquery'),
         1,
@@ -127,7 +127,7 @@ function kaktos_theme_scripts()
     );
 
     wp_enqueue_script(
-        'kaktos_ajax_state_city_script',
+        'seo1_ajax_state_city_script',
         get_template_directory_uri() . '/assets/js/state-city.js',
         array('jquery'),
         1,
@@ -135,7 +135,7 @@ function kaktos_theme_scripts()
     );
 
     wp_enqueue_script(
-        'kaktos_ajax_user_script',
+        'seo1_ajax_user_script',
         get_template_directory_uri() . '/assets/js/user.js',
         array('jquery'),
         1,
@@ -143,7 +143,7 @@ function kaktos_theme_scripts()
     );
 
     wp_enqueue_script(
-        'kaktos_ajax_user_profile_script',
+        'seo1_ajax_user_profile_script',
         get_template_directory_uri() . '/assets/js/profile.js',
         array('jquery'),
         1,
@@ -151,7 +151,7 @@ function kaktos_theme_scripts()
     );
 
 
-    wp_localize_script('kaktos_ajax_script', 'custom_theme_mbm_object', array(
+    wp_localize_script('seo1_ajax_script', 'custom_theme_mbm_object', array(
         'ajaxurl' => admin_url('admin-ajax.php'),
         'security' => wp_create_nonce('file_upload'),
         'siteurl' => site_url(),
@@ -162,7 +162,7 @@ function kaktos_theme_scripts()
     ));
 }
 
-add_action('wp_enqueue_scripts', 'kaktos_theme_scripts');
+add_action('wp_enqueue_scripts', 'seo1_theme_scripts');
 
 
 ////ajax
@@ -207,8 +207,8 @@ add_action('manage_job_posts_custom_column', function ($column_key, $post_id) {
 }, 10, 2);
 
 
-add_action('admin_init', 'kaktos_admin_active_job');
-function kaktos_admin_active_job()
+add_action('admin_init', 'seo1_admin_active_job');
+function seo1_admin_active_job()
 {
     if (!is_admin()) {
         return;

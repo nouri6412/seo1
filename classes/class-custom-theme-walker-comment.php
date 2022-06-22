@@ -49,14 +49,14 @@ class CustomTheme_Walker_Comment extends Walker_Comment {
 						 * Using the `check` icon instead of `check_circle`, since we can't add a
 						 * fill color to the inner check shape when in circle form.
 						 */
-						if ( kaktos_is_comment_by_post_author( $comment ) ) {
+						if ( seo1_is_comment_by_post_author( $comment ) ) {
 							printf( '<span class="post-author-badge" aria-hidden="true">%s</span>', custom_theme_get_icon_svg( 'check', 24 ) );
 						}
 
 						printf(
 							wp_kses(
 								/* translators: %s: Comment author link. */
-								__( '%s <span class="screen-reader-text says">says:</span>', 'kaktos' ),
+								__( '%s <span class="screen-reader-text says">says:</span>', 'seo1' ),
 								array(
 									'span' => array(
 										'class' => array(),
@@ -75,7 +75,7 @@ class CustomTheme_Walker_Comment extends Walker_Comment {
 					<div class="comment-metadata">
 						<?php
 						/* translators: 1: Comment date, 2: Comment time. */
-						$comment_timestamp = sprintf( __( '%1$s at %2$s', 'kaktos' ), get_comment_date( '', $comment ), get_comment_time() );
+						$comment_timestamp = sprintf( __( '%1$s at %2$s', 'seo1' ), get_comment_date( '', $comment ), get_comment_time() );
 
 						printf(
 							'<a href="%s"><time datetime="%s" title="%s">%s</time></a>',
@@ -86,16 +86,16 @@ class CustomTheme_Walker_Comment extends Walker_Comment {
 						);
 
 						$edit_comment_icon = custom_theme_get_icon_svg( 'edit', 16 );
-						edit_comment_link( __( 'Edit', 'kaktos' ), ' <span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
+						edit_comment_link( __( 'Edit', 'seo1' ), ' <span class="edit-link-sep">&mdash;</span> <span class="edit-link">' . $edit_comment_icon, '</span>' );
 						?>
 					</div><!-- .comment-metadata -->
 
 					<?php
 					$commenter = wp_get_current_commenter();
 					if ( $commenter['comment_author_email'] ) {
-						$moderation_note = __( 'Your comment is awaiting moderation.', 'kaktos' );
+						$moderation_note = __( 'Your comment is awaiting moderation.', 'seo1' );
 					} else {
-						$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'kaktos' );
+						$moderation_note = __( 'Your comment is awaiting moderation. This is a preview; your comment will be visible after it has been approved.', 'seo1' );
 					}
 					?>
 

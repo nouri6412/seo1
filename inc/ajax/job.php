@@ -1,5 +1,5 @@
 <?php
-class Kaktos_Job
+class Seo1_Job
 {
     function insert_job()
     {
@@ -269,20 +269,20 @@ class Kaktos_Job
     }
 }
 
-$Kaktos_Job = new Kaktos_Job;
-add_action('wp_ajax_mbm_profile_company_insert_job', array($Kaktos_Job, 'insert_job'));
-add_action('wp_ajax_nopriv_mbm_profile_company_insert_job', array($Kaktos_Job, 'insert_job'));
+$Seo1_Job = new Seo1_Job;
+add_action('wp_ajax_mbm_profile_company_insert_job', array($Seo1_Job, 'insert_job'));
+add_action('wp_ajax_nopriv_mbm_profile_company_insert_job', array($Seo1_Job, 'insert_job'));
 
-add_action('wp_ajax_mbm_profile_company_remove_job', array($Kaktos_Job, 'remove_job'));
-add_action('wp_ajax_nopriv_mbm_profile_company_remove_job', array($Kaktos_Job, 'remove_job'));
+add_action('wp_ajax_mbm_profile_company_remove_job', array($Seo1_Job, 'remove_job'));
+add_action('wp_ajax_nopriv_mbm_profile_company_remove_job', array($Seo1_Job, 'remove_job'));
 
-add_action('wp_ajax_mbm_change_status_request', array($Kaktos_Job, 'status'));
-add_action('wp_ajax_nopriv_mbm_change_status_request', array($Kaktos_Job, 'status'));
+add_action('wp_ajax_mbm_change_status_request', array($Seo1_Job, 'status'));
+add_action('wp_ajax_nopriv_mbm_change_status_request', array($Seo1_Job, 'status'));
 
-add_action('wp_ajax_mbm_change_favorite_request', array($Kaktos_Job, 'favorite'));
-add_action('wp_ajax_nopriv_mbm_change_favorite_request', array($Kaktos_Job, 'favorite'));
+add_action('wp_ajax_mbm_change_favorite_request', array($Seo1_Job, 'favorite'));
+add_action('wp_ajax_nopriv_mbm_change_favorite_request', array($Seo1_Job, 'favorite'));
 
 
-add_action('wp_ajax_mbm_change_status_job', array($Kaktos_Job, 'active'));
-add_action('wp_ajax_nopriv_mbm_change_status_job', array($Kaktos_Job, 'active'));
+add_action('wp_ajax_mbm_change_status_job', array($Seo1_Job, 'active'));
+add_action('wp_ajax_nopriv_mbm_change_status_job', array($Seo1_Job, 'active'));
 

@@ -1,5 +1,5 @@
 <?php
-class Kaktos_Contact_Ajax
+class Seo1_Contact_Ajax
 {
     function submit()
     {
@@ -123,14 +123,14 @@ class Kaktos_Contact_Ajax
         die();
     }
 }
-$Kaktos_Contact_Ajax = new Kaktos_Contact_Ajax;
-add_action('wp_ajax_mbm_contact_form', array($Kaktos_Contact_Ajax, 'submit'));
-add_action('wp_ajax_nopriv_mbm_contact_form', array($Kaktos_Contact_Ajax, 'submit'));
+$Seo1_Contact_Ajax = new Seo1_Contact_Ajax;
+add_action('wp_ajax_mbm_contact_form', array($Seo1_Contact_Ajax, 'submit'));
+add_action('wp_ajax_nopriv_mbm_contact_form', array($Seo1_Contact_Ajax, 'submit'));
 
-add_action('wp_ajax_mbm_set_session', array($Kaktos_Contact_Ajax, 'session'));
-add_action('wp_ajax_nopriv_mbm_set_session', array($Kaktos_Contact_Ajax, 'session'));
+add_action('wp_ajax_mbm_set_session', array($Seo1_Contact_Ajax, 'session'));
+add_action('wp_ajax_nopriv_mbm_set_session', array($Seo1_Contact_Ajax, 'session'));
 
-add_action('wp_ajax_mbm_set_session_confirm', array($Kaktos_Contact_Ajax, 'confirm'));
-add_action('wp_ajax_nopriv_mbm_set_session_confirm', array($Kaktos_Contact_Ajax, 'confirm'));
+add_action('wp_ajax_mbm_set_session_confirm', array($Seo1_Contact_Ajax, 'confirm'));
+add_action('wp_ajax_nopriv_mbm_set_session_confirm', array($Seo1_Contact_Ajax, 'confirm'));
 
-add_action('user_register', array($Kaktos_Contact_Ajax, 'register_action'));
+add_action('user_register', array($Seo1_Contact_Ajax, 'register_action'));

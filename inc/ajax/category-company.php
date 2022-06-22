@@ -1,5 +1,5 @@
 <?php
-class Kaktos_Category
+class Seo1_Category
 {
     function get_company_cat_list()
     {

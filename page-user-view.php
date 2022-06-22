@@ -6,8 +6,8 @@
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/#single-post
  *
  * @package WordPress
- * @subpackage Kaktos
- * @since Kaktos 1.0
+ * @subpackage Seo1
+ * @since Seo1 1.0
  *  * Template Name: مشاهده کاربر
  */
 

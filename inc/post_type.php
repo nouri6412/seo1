@@ -1,7 +1,7 @@
 <?php
 ///post type contact
 
-function kaktos_post_type_contact()
+function seo1_post_type_contact()
 {
 
     $supports = array(
@@ -43,12 +43,12 @@ function kaktos_post_type_contact()
     );
     register_post_type('contact_form', $args);
 }
-add_action('init', 'kaktos_post_type_contact');
+add_action('init', 'seo1_post_type_contact');
 
 
 ///post type job
 
-function kaktos_post_type_job()
+function seo1_post_type_job()
 {
 
     $supports = array(
@@ -87,11 +87,11 @@ function kaktos_post_type_job()
     );
     register_post_type('job', $args);
 }
-add_action('init', 'kaktos_post_type_job');
+add_action('init', 'seo1_post_type_job');
 
 ///post type state
 
-function kaktos_post_type_state()
+function seo1_post_type_state()
 {
 
     $supports = array(
@@ -130,11 +130,11 @@ function kaktos_post_type_state()
     );
     register_post_type('state', $args);
 }
-add_action('init', 'kaktos_post_type_state');
+add_action('init', 'seo1_post_type_state');
 
 ///post type city
 
-function kaktos_post_type_city()
+function seo1_post_type_city()
 {
 
     $supports = array(
@@ -173,12 +173,12 @@ function kaktos_post_type_city()
     );
     register_post_type('city', $args);
 }
-add_action('init', 'kaktos_post_type_city');
+add_action('init', 'seo1_post_type_city');
 
 
 /// skills
 
-function kaktos_post_type_skill()
+function seo1_post_type_skill()
 {
 
     $supports = array(
@@ -217,11 +217,11 @@ function kaktos_post_type_skill()
     );
     register_post_type('skill', $args);
 }
-add_action('init', 'kaktos_post_type_skill');
+add_action('init', 'seo1_post_type_skill');
 
 /// job cat
 
-function kaktos_post_type_job_cat()
+function seo1_post_type_job_cat()
 {
 
     $supports = array(
@@ -260,11 +260,11 @@ function kaktos_post_type_job_cat()
     );
     register_post_type('job-cat', $args);
 }
-add_action('init', 'kaktos_post_type_job_cat');
+add_action('init', 'seo1_post_type_job_cat');
 
 ///post type tag
 
-function kaktos_post_type_job_tag()
+function seo1_post_type_job_tag()
 {
 
     $supports = array(
@@ -303,4 +303,4 @@ function kaktos_post_type_job_tag()
     );
     register_post_type('job-tag', $args);
 }
-add_action('init', 'kaktos_post_type_job_tag');
+add_action('init', 'seo1_post_type_job_tag');

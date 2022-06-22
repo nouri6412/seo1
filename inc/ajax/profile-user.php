@@ -1,5 +1,5 @@
 <?php
-class Kaktos_User
+class Seo1_User
 {
     function save_profile()
     {
@@ -281,21 +281,21 @@ class Kaktos_User
     }
 }
 
-$Kaktos_User = new Kaktos_User;
-add_action('wp_ajax_mbm_profile_user_profile', array($Kaktos_User, 'save_profile'));
-add_action('wp_ajax_nopriv_mbm_profile_user_profile', array($Kaktos_User, 'save_profile'));
+$Seo1_User = new Seo1_User;
+add_action('wp_ajax_mbm_profile_user_profile', array($Seo1_User, 'save_profile'));
+add_action('wp_ajax_nopriv_mbm_profile_user_profile', array($Seo1_User, 'save_profile'));
 
-add_action('wp_ajax_mbm_profile_user_save_resume', array($Kaktos_User, 'save_resume'));
-add_action('wp_ajax_nopriv_mbm_profile_user_save_resume', array($Kaktos_User, 'save_resume'));
+add_action('wp_ajax_mbm_profile_user_save_resume', array($Seo1_User, 'save_resume'));
+add_action('wp_ajax_nopriv_mbm_profile_user_save_resume', array($Seo1_User, 'save_resume'));
 
-add_action('wp_ajax_mbm_profile_user_save_project', array($Kaktos_User, 'save_project'));
-add_action('wp_ajax_nopriv_mbm_profile_user_save_project', array($Kaktos_User, 'save_project'));
+add_action('wp_ajax_mbm_profile_user_save_project', array($Seo1_User, 'save_project'));
+add_action('wp_ajax_nopriv_mbm_profile_user_save_project', array($Seo1_User, 'save_project'));
 
-add_action('wp_ajax_mbm_profile_user_request_project', array($Kaktos_User, 'request_project'));
-add_action('wp_ajax_nopriv_mbm_profile_user_request_project', array($Kaktos_User, 'request_project'));
+add_action('wp_ajax_mbm_profile_user_request_project', array($Seo1_User, 'request_project'));
+add_action('wp_ajax_nopriv_mbm_profile_user_request_project', array($Seo1_User, 'request_project'));
 
-add_action('wp_ajax_mbm_profile_user_get_form', array($Kaktos_User, 'get_form'));
-add_action('wp_ajax_nopriv_mbm_profile_user_get_form', array($Kaktos_User, 'get_form'));
+add_action('wp_ajax_mbm_profile_user_get_form', array($Seo1_User, 'get_form'));
+add_action('wp_ajax_nopriv_mbm_profile_user_get_form', array($Seo1_User, 'get_form'));
 
-add_action('wp_ajax_mbm_user_resume_popup', array($Kaktos_User, 'get_user'));
-add_action('wp_ajax_nopriv_mbm_user_resume_popup', array($Kaktos_User, 'get_user'));
+add_action('wp_ajax_mbm_user_resume_popup', array($Seo1_User, 'get_user'));
+add_action('wp_ajax_nopriv_mbm_user_resume_popup', array($Seo1_User, 'get_user'));

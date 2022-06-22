@@ -608,7 +608,7 @@ class MyTmpTelegramBot
                             );
                             update_user_meta($user->ID, "user_e_email", $text);
                             update_user_meta($user->ID, "bot_step", 'user-profile-register-pass');
-                            $this->sendMessage($chatId, urlencode("برای ورود به پنل کاربری خود از طریق وبسایت کاکتوس رمز عبور دلخواه خود را وارد نمایید"));
+                            $this->sendMessage($chatId, urlencode("برای ورود به پنل کاربری خود از طریق وبسایت سئوکار 1 رمز عبور دلخواه خود را وارد نمایید"));
                         }
                     }
                     break;
@@ -952,7 +952,7 @@ class MyTmpTelegramBot
                             );
                             update_user_meta($user->ID, "user_e_email", $text);
                             update_user_meta($user->ID, "bot_step", 'company-profile-register-pass');
-                            $this->sendMessage($chatId, urlencode("برای ورود به پنل کاربری خود از طریق وبسایت کاکتوس رمز عبور دلخواه خود را وارد نمایید"));
+                            $this->sendMessage($chatId, urlencode("برای ورود به پنل کاربری خود از طریق وبسایت سئوکار 1 رمز عبور دلخواه خود را وارد نمایید"));
                         }
                     }
                     break;
@@ -1502,8 +1502,8 @@ class MyTmpTelegramBot
 
         $cat_arr = [];
 
-        $Kaktos_Category = new Kaktos_Category;
-        $cats = $Kaktos_Category->get_company_cat_list();
+        $Seo1_Category = new Seo1_Category;
+        $cats = $Seo1_Category->get_company_cat_list();
 
         foreach ($cats as $item) {
 

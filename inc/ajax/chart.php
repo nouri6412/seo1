@@ -1,5 +1,5 @@
 <?php
-class Kaktos_Chart_Ajax
+class Seo1_Chart_Ajax
 {
     function chart()
     {
@@ -200,6 +200,6 @@ class Kaktos_Chart_Ajax
         return $result;
     }
 }
-$Kaktos_Chart_Ajax = new Kaktos_Chart_Ajax;
-add_action('wp_ajax_mbm_chart_project', array($Kaktos_Chart_Ajax, 'chart'));
-add_action('wp_ajax_nopriv_mbm_chart_project', array($Kaktos_Chart_Ajax, 'chart'));
+$Seo1_Chart_Ajax = new Seo1_Chart_Ajax;
+add_action('wp_ajax_mbm_chart_project', array($Seo1_Chart_Ajax, 'chart'));
+add_action('wp_ajax_nopriv_mbm_chart_project', array($Seo1_Chart_Ajax, 'chart'));
